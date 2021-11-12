@@ -77,11 +77,8 @@ data_cleaned.loc[data_cleaned["original_product_name"] == "E.ON STROM ÖO", "ori
 data_cleaned["original_product_name"].value_counts()
 
 
-
-
-
-
-# Read sqlite query results into a pandas DataFrame and plot
+# ----------
+# Addon: connect zipcodes to geodata and plot all customers on map
 con = sqlite3.connect("data/postcodes.db")
 df_geo_data = pd.read_sql_query("SELECT * from postcodes", con)
 con.close()
